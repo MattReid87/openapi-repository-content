@@ -1,8 +1,8 @@
 {
-    "name": "Stripe API",
-    "description": "Complete payment processing solution",
-    "categories": ["Payment", "Finance"],
+    "name": "Dicker Data API",
+    "description": "Managed Service Provider (MSP) distribution platform",
+    "categories": ["Distribution", "IT Services", "Technology"],
     "version": "2024.01",
     "maintainers": ["MattReid87"],
-    "icon": "https://path-to-icon.png"
+    "icon": "specs/dicker-data/dicker-data.svg"
   }

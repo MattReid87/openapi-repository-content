@@ -1,8 +1,8 @@
 {
-    "name": "Stripe API",
-    "description": "Complete payment processing solution",
-    "categories": ["Payment", "Finance"],
+    "name": "SendGrid API",
+    "description": "Comprehensive email delivery and management platform",
+    "categories": ["Email", "Communication", "Marketing"],
     "version": "2024.01",
     "maintainers": ["MattReid87"],
-    "icon": "https://path-to-icon.png"
+    "icon": "specs/sendgrid/sendgrid.svg"
   }
