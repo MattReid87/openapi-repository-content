@@ -4,5 +4,5 @@
     "categories": ["Email", "Communication", "Marketing"],
     "version": "2024.01",
     "maintainers": ["MattReid87"],
-    "icon": "specs/sendgrid/sendgrid.svg"
+    "icon": "https://raw.githubusercontent.com/MattReid87/openapi-repository-content/refs/heads/main/specs/sendgrid/sendgrid.svg"
   }

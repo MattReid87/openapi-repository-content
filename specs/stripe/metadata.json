@@ -4,5 +4,5 @@
     "categories": ["Payment", "Finance"],
     "version": "2024.01",
     "maintainers": ["MattReid87"],
-    "icon": "specs/stripe/stripe.svg"
+    "icon": "https://raw.githubusercontent.com/MattReid87/openapi-repository-content/refs/heads/main/specs/stripe/stripe.svg"
   }
