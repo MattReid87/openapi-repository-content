@@ -3,6 +3,7 @@
     "description": "Managed Service Provider (MSP) distribution platform",
     "categories": ["Distribution", "IT Services", "Technology"],
     "version": "2024.01",
+    "slug": "dickerdata",
     "maintainers": ["MattReid87"],
     "icon": "https://raw.githubusercontent.com/MattReid87/openapi-repository-content/refs/heads/main/specs/dickerdata/dickerdata.svg"
   }

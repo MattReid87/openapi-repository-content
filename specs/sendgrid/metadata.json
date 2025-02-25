@@ -3,6 +3,7 @@
     "description": "Comprehensive email delivery and management platform",
     "categories": ["Email", "Communication", "Marketing"],
     "version": "2024.01",
+    "slug": "sendgrid",
     "maintainers": ["MattReid87"],
     "icon": "https://raw.githubusercontent.com/MattReid87/openapi-repository-content/refs/heads/main/specs/sendgrid/sendgrid.svg"
   }

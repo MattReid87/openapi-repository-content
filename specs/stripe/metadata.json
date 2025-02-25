@@ -3,6 +3,7 @@
     "description": "Complete payment processing solution",
     "categories": ["Payment", "Finance"],
     "version": "2024.01",
+    "slug": "stripe",
     "maintainers": ["MattReid87"],
     "icon": "https://raw.githubusercontent.com/MattReid87/openapi-repository-content/refs/heads/main/specs/stripe/stripe.svg"
   }

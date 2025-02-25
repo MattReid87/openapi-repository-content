@@ -1,0 +1,3216 @@
+---
+swagger: "2.0"
+info:
+  version: v1
+  title: B2BRESTAPI
+host: b2b-api.dickerdata.com.au
+schemes:
+  - https
+paths:
+  /api/AccessKeyRequest:
+    get:
+      tags:
+        - AccessKeyRequest
+      operationId: AccessKeyRequest_Get
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request.transactionID
+          in: query
+          required: false
+          type: string
+        - name: request.accessToken
+          in: query
+          required: false
+          type: string
+        - name: request.accountCode
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.B2BRestAPIAccessKeyResponse"
+      deprecated: false
+    post:
+      tags:
+        - AccessKeyRequest
+      operationId: AccessKeyRequest_Post
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.B2BRestAPIAccessKeyRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.B2BRestAPIAccessKeyResponse"
+      deprecated: false
+  /api/Account/Invoice:
+    get:
+      tags:
+        - Account
+      operationId: Account_Invoice
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request.startDate
+          in: query
+          required: false
+          type: string
+        - name: request.endDate
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.transactionID
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.token
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.accessKey
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.apiVersion
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Account/InvoiceDetails:
+    get:
+      tags:
+        - Account
+      operationId: Account_InvoiceDetails
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request.requestHeader.transactionID
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.token
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.accessKey
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.apiVersion
+          in: query
+          required: false
+          type: string
+        - name: request.salesOrderNumber
+          in: query
+          required: false
+          type: string
+        - name: request.salesOrderNumberSuffix
+          in: query
+          required: false
+          type: string
+        - name: request.includeCustomerQualification
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Autodesk/UpdateSubscription:
+    post:
+      tags:
+        - Autodesk
+      operationId: Autodesk_UpdateSubscription
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.B2BAutodeskUpdateSusbcription+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Autodesk/GetTermSwitchStatus:
+    post:
+      tags:
+        - Autodesk
+      operationId: Autodesk_GetTermSwitchStatus
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.B2BAutodeskTermSwitchStatus+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Autodesk:
+    get:
+      tags:
+        - Autodesk
+      operationId: Autodesk_GetLicense
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: input.token
+          in: query
+          required: false
+          type: string
+        - name: input.serialNumber
+          in: query
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+    post:
+      tags:
+        - Autodesk
+      operationId: Autodesk_PostLicense
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: licenseRequestBody
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/DDResources.ServiceHub.SHADGetLicenceInput"
+        - name: input.token
+          in: query
+          required: false
+          type: string
+        - name: input.serialNumber
+          in: query
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/CommercialGateway/OrderAcknowledgment:
+    post:
+      tags:
+        - CommercialGateway
+      operationId: CommercialGateway_OrderAcknowledgment
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: orderAck
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/CommercialGatewayService.Model.MicrosoftCGWAcknowledgement"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Extended/GetSubscriptionDetailsExtended:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetSubscriptionDetailsExtended
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionDetailsRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Extended/GetOpportunityExtended:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetOpportunityExtended
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetOpportunityRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/CreateTenant:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_CreateTenant
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.TenantRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/AssociateTenant:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_AssociateTenant
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.TenantRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetTenant:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetTenant
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.TenantRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetTenantIdByDomain:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetTenantIdByDomain
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetTenantIdByDomainRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/CSPDomainCheck:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_CSPDomainCheck
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.CSPDomainCheck+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetCSPStockcode:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetCSPStockcode
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetCSPStockcodeRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/CSPInvoiceReport:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_CSPInvoiceReport
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.CSPInvoiceReportRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetCSPAvailableAddons:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetCSPAvailableAddons
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetCSPAvailableAddonsRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/CreateSubscription:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_CreateSubscription
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/ManageSubscription:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_ManageSubscription
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetSubscriptionDetails:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetSubscriptionDetails
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionDetailsRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetSubscriptionActions:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetSubscriptionActions
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionActionsRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetSubscriptionUsageDetails:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetSubscriptionUsageDetails
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionUsageDetailsRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetOpportunityList:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetOpportunityList
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetOpportunityRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetOpportunityDetails:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetOpportunityDetails
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetOpportunityRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetLicense:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_GetLicense
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request.requestHeader.transactionID
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.token
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.accessKey
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.apiVersion
+          in: query
+          required: false
+          type: string
+        - name: request.serialNumber
+          in: query
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/DickerData/GetPrice:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetPrice
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.PriceRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetMCuAMetaData:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_GetMCuAMetaData
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/SignMCuA:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_SignMCuA
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.AgreementRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetMCuAAcceptanceDetails:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetMCuAAcceptanceDetails
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.AgreementRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/DickerData/GetUserDetails:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_GetUserDetails
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: input.userName
+          in: query
+          required: false
+          type: string
+        - name: input.accountCode
+          in: query
+          required: false
+          type: string
+        - name: input.password
+          in: query
+          required: false
+          type: string
+        - name: input.token
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/DickerData/PostUserDetails:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_PostUserDetails
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: userDetailsRequestBody
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/DDResources.ServiceHub.DDUserDetailsInput"
+        - name: input.userName
+          in: query
+          required: false
+          type: string
+        - name: input.accountCode
+          in: query
+          required: false
+          type: string
+        - name: input.password
+          in: query
+          required: false
+          type: string
+        - name: input.token
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/DickerData/UserDetails:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_UserDetails
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.UserDetailsRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/DickerData/ValidateUser:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_ValidateUser
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.UserDetailsRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/GetOrderDetails:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_GetOrderDetails
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request.requestHeader.transactionID
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.token
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.accessKey
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.apiVersion
+          in: query
+          required: false
+          type: string
+        - name: request.in.orderNumber
+          in: query
+          required: false
+          type: string
+        - name: request.in.accountCode
+          in: query
+          required: false
+          type: string
+        - name: request.in.customerPORef
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/OrderDetails:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_OrderDetails
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: orderNumber
+          in: query
+          required: false
+          type: string
+        - name: customerPONumber
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Order/CreateOrder:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_CreateOrder
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.OrderRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Order/GetOrderTemplate:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetOrderTemplate
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetOrderTemplateRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/GetOrderSerials:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_GetOrderSerials
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: orderNumber
+          in: query
+          required: true
+          type: string
+        - name: orderSuffix
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Order/GetConsignmentStatus:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_GetConsignmentStatus
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request.requestHeader.transactionID
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.token
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.accessKey
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.apiVersion
+          in: query
+          required: false
+          type: string
+        - name: request.consignmentNumber
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/TransactOpportunity:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_TransactOpportunity
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.TransactOpportunityRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/GetOrderDetailsList:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_GetOrderDetailsList
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request.requestHeader.transactionID
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.token
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.accessKey
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.apiVersion
+          in: query
+          required: false
+          type: string
+        - name: request.accountCode
+          in: query
+          required: false
+          type: string
+        - name: request.orderNumber
+          in: query
+          required: false
+          type: string
+        - name: request.backorderNumber
+          in: query
+          required: false
+          type: string
+        - name: request.customerPONumber
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/PlaceSubscriptionOrder:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_PlaceSubscriptionOrder
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/GetAnnuityList:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetAnnuityList
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetAnnuityListCons+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/GetAnnuityOrderItems:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetAnnuityOrderItems
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetAnnuityOrderItems+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/ConfirmAnnuityOrders:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_ConfirmAnnuityOrders
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.ConfirmAnnuityOrder+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Subscriptions/GetADLicense:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_GetADLicense
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetADLicense+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/DickerData/CreatePutAwayPO:
+    post:
+      tags:
+        - DickerData
+      operationId: DickerData_CreatePutAwayPO
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.B2BCreatePutAwayPO+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/DickerData/GetPartnerProgramDetails:
+    get:
+      tags:
+        - DickerData
+      operationId: DickerData_GetPartnerProgramDetails
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request.requestHeader.transactionID
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.token
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.accessKey
+          in: query
+          required: false
+          type: string
+        - name: request.requestHeader.apiVersion
+          in: query
+          required: false
+          type: string
+        - name: request.accountCode
+          in: query
+          required: false
+          type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/ESD/PrintToken:
+    post:
+      tags:
+        - ESD
+      operationId: ESD_PrintToken
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.ESDToken+PrintTokenESDRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/ESD/CheckStatus:
+    post:
+      tags:
+        - ESD
+      operationId: ESD_CheckStatus
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.ESDToken+CheckESDStatusRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/ESD/ReturnToken:
+    post:
+      tags:
+        - ESD
+      operationId: ESD_ReturnToken
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.ESDToken+ReturnESDTokenRequest"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/ESD/Ping:
+    post:
+      tags:
+        - ESD
+      operationId: ESD_Ping
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/File/Upload/Edi/Order:
+    post:
+      tags:
+        - File
+      operationId: File_UploadEdiFile
+      consumes:
+        - text/xml
+        - text/plain
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: uploadedContent
+          in: body
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/CreateSubscription:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_CreateSubscription
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.CreateSubscription+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/GetSubscriptionRenewalDetail:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_GetSubscriptionRenewalDetail
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionRenewalDetail+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/CancelSubscription:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_CancelSubscription
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.CancelSubscription+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/ManageSubscriptionAutoRenew:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_ManageSubscriptionAutoRenew
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.ManageSubscriptionAutoRenew+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/ScheduleSubscriptionRenewal:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_ScheduleSubscriptionRenewal
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.ScheduleSubscriptionRenewal+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/GetSkuDetail:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_GetSkuDetail
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetSkuDetail+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/GetTransitionEligibility:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_GetTransitionEligibility
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.GetTransitionEligibilities+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/SubscriptionTransition:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_SubscriptionTransition
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionTransition+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/EditTenantDetails:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_EditTenantDetails
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.EditTenantDetails+Request"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/System.Object"
+      deprecated: false
+  /api/Microsoft/TestEvent:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_TestEvent
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces: []
+      parameters:
+        - name: callback
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/System.Object"
+      responses:
+        "204":
+          description: No Content
+      deprecated: false
+  /api/Microsoft/Webhook:
+    post:
+      tags:
+        - Microsoft
+      operationId: Microsoft_Webhook
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces: []
+      parameters:
+        - name: callback
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/System.Object"
+      responses:
+        "204":
+          description: No Content
+      deprecated: false
+  /api/PricingRequest:
+    get:
+      tags:
+        - PricingRequest
+      operationId: PricingRequest_Get
+      consumes: []
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: pricingRequest.messageID
+          in: query
+          required: false
+          type: string
+        - name: pricingRequest.token
+          in: query
+          required: false
+          type: string
+        - name: pricingRequest.accessKey
+          in: query
+          required: false
+          type: string
+        - name: pricingRequest.products
+          in: query
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.PricingResponse"
+      deprecated: false
+    post:
+      tags:
+        - PricingRequest
+      operationId: PricingRequest_Post
+      consumes:
+        - text/xml
+        - text/plain
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: pricingRequestBody
+          in: body
+          required: true
+          schema:
+            type: string
+        - name: pricingRequestUri.messageID
+          in: query
+          required: false
+          type: string
+        - name: pricingRequestUri.token
+          in: query
+          required: false
+          type: string
+        - name: pricingRequestUri.accessKey
+          in: query
+          required: false
+          type: string
+        - name: pricingRequestUri.products
+          in: query
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.PricingResponse"
+      deprecated: false
+  /api/PurchaseOrderRequestAutodesk:
+    post:
+      tags:
+        - PurchaseOrderRequestAutodesk
+      operationId: PurchaseOrderRequestAutodesk_Post
+      consumes:
+        - application/json
+        - text/json
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+        - text/json
+      parameters:
+        - name: poRequestAutodesk
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.PurchaseOrderRequestAutodesk"
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/B2BRESTAPI.Models.PurchaseOrderResponse"
+      deprecated: false
+definitions:
+  B2BRESTAPI.Models.B2BRestAPIAccessKeyRequest:
+    type: object
+    properties:
+      TransactionID:
+        type: string
+      AccessToken:
+        type: string
+      AccountCode:
+        type: string
+  B2BRESTAPI.Models.B2BRestAPIAccessKeyResponse:
+    type: object
+    properties:
+      TransactionID:
+        type: string
+      AccessKey:
+        type: string
+      CreationDateTime:
+        format: date-time
+        type: string
+      ExpireDateTime:
+        format: date-time
+        type: string
+      Status:
+        type: string
+      Message:
+        type: string
+  B2BRESTAPI.Models.GetInvoiceByDateRangeRequest:
+    type: object
+    properties:
+      StartDate:
+        type: string
+      EndDate:
+        type: string
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+  B2BRESTAPI.Models.APIRequestHeader:
+    type: object
+    properties:
+      TransactionID:
+        type: string
+      Token:
+        type: string
+      AccessKey:
+        type: string
+      ApiVersion:
+        type: string
+  System.Object:
+    type: object
+    properties: {}
+  B2BRESTAPI.Models.GetOrderItemDetailRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      SalesOrderNumber:
+        type: string
+      SalesOrderNumberSuffix:
+        type: string
+      IncludeCustomerQualification:
+        type: string
+  B2BRESTAPI.Models.B2BAutodeskUpdateSusbcription+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      Subscriptions:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.B2BAutodeskUpdateSusbcription+AutodeskSu\
+            bscription"
+  B2BRESTAPI.Models.B2BAutodeskUpdateSusbcription+AutodeskSubscription:
+    type: object
+    properties:
+      SubscriptionReferenceNumber:
+        type: string
+      Contract:
+        $ref: "#/definitions/B2BRESTAPI.Models.B2BAutodeskUpdateSusbcription+AutodeskCo\
+          ntract"
+  B2BRESTAPI.Models.B2BAutodeskUpdateSusbcription+AutodeskContract:
+    type: object
+    properties:
+      Term:
+        type: string
+  B2BRESTAPI.Models.B2BAutodeskTermSwitchStatus+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      Location:
+        type: string
+  B2BRESTAPI.Models.ADGetLicense:
+    type: object
+    properties:
+      Token:
+        type: string
+      SerialNumber:
+        type: array
+        items:
+          type: string
+  DDResources.ServiceHub.SHADGetLicenceInput:
+    type: object
+    properties:
+      Token:
+        type: string
+      SerialNumber:
+        type: array
+        items:
+          type: string
+      PartnerCSN:
+        type: string
+      AccountId:
+        type: string
+      LoginId:
+        type: string
+      CompanyCode:
+        type: string
+  CommercialGatewayService.Model.MicrosoftCGWAcknowledgement:
+    type: object
+    properties:
+      Version:
+        type: string
+      Sender:
+        type: string
+      Receiver:
+        type: string
+      MessageType:
+        type: string
+      MessageID:
+        type: string
+      CorrelationId:
+        type: string
+      CorrelationIdhasMultipleNotifications:
+        type: boolean
+      ResourceUrl:
+        type: string
+      isTest:
+        type: boolean
+      EventCreatedAt:
+        type: string
+      companyCode:
+        type: string
+  B2BRESTAPI.Models.SubscriptionDetailsRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionDetailsIn"
+  B2BRESTAPI.Models.SubscriptionDetailsIn:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionReference:
+        type: string
+      StockCode:
+        type: string
+      SubscriptionId:
+        type: string
+      SubscriptionType:
+        type: string
+      OrderId:
+        type: string
+  B2BRESTAPI.Models.GetOpportunityRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.GetOpportunity+In"
+  B2BRESTAPI.Models.GetOpportunity+In:
+    type: object
+    properties:
+      PartnerCSN:
+        type: string
+      ContractNumber:
+        type: string
+      OpportunityNumber:
+        type: string
+      FromDate:
+        type: string
+      ToDate:
+        type: string
+  B2BRESTAPI.Models.TenantRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.TenantIn"
+  B2BRESTAPI.Models.TenantIn:
+    type: object
+    properties:
+      DomainPrefix:
+        type: string
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Phone:
+        type: string
+      Email:
+        type: string
+      CompanyName:
+        type: string
+      Address01:
+        type: string
+      Address02:
+        type: string
+      Address03:
+        type: string
+      Suburb:
+        type: string
+      State:
+        type: string
+      Postcode:
+        type: string
+      Country:
+        type: string
+      SubscriptionType:
+        type: string
+      RelatedCSN:
+        type: string
+      TenantID:
+        type: string
+      AssociationEmail:
+        type: string
+      TenantDescription:
+        type: string
+  B2BRESTAPI.Models.GetTenantIdByDomainRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      Domain:
+        type: string
+  B2BRESTAPI.Models.CSPDomainCheck+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      DomainPrefix:
+        type: string
+  B2BRESTAPI.Models.GetCSPStockcodeRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      AccountCode:
+        type: string
+      SubscriptionType:
+        type: string
+      TenantId:
+        type: string
+  B2BRESTAPI.Models.CSPInvoiceReportRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      InvoiceStartDate:
+        type: string
+      InvoiceEndDate:
+        type: string
+  B2BRESTAPI.Models.GetCSPAvailableAddonsRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.CSPAvailableAddons+In"
+  B2BRESTAPI.Models.CSPAvailableAddons+In:
+    type: object
+    properties:
+      SubscriptionID:
+        type: string
+      StockCode:
+        type: string
+      OfferID:
+        type: string
+  B2BRESTAPI.Models.SubscriptionRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionIn"
+  B2BRESTAPI.Models.SubscriptionIn:
+    type: object
+    properties:
+      StockCode:
+        type: string
+      Quantity:
+        type: string
+      ParentStockCode:
+        type: string
+      SubscriptionDescription:
+        type: string
+      TenantID:
+        type: string
+      MPNID:
+        type: string
+      Email:
+        type: string
+      UserName:
+        type: string
+      SubscriptionID:
+        type: string
+      Action:
+        type: string
+      SubscriptionType:
+        type: string
+  B2BRESTAPI.Models.SubscriptionActionsRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionActionsIn"
+  B2BRESTAPI.Models.SubscriptionActionsIn:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionId:
+        type: string
+      OrderId:
+        type: string
+      ParentSubscription:
+        type: string
+      StockCode:
+        type: string
+      SubscriptionReference:
+        type: string
+      SubscriptionType:
+        type: string
+  B2BRESTAPI.Models.SubscriptionUsageDetailsRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionUsageDetailsIn"
+  B2BRESTAPI.Models.SubscriptionUsageDetailsIn:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionId:
+        type: string
+      UsagePeriodStart:
+        type: string
+      UsagePeriodEnd:
+        type: string
+  B2BRESTAPI.Models.SubscriptionLicenseRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      SerialNumber:
+        type: array
+        items:
+          type: string
+  B2BRESTAPI.Models.PriceRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      Products:
+        type: array
+        items:
+          type: string
+  B2BRESTAPI.Models.AgreementRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      TenantID:
+        type: string
+      Agreement:
+        $ref: "#/definitions/B2BRESTAPI.Models.B2BAgreement"
+  B2BRESTAPI.Models.B2BAgreement:
+    type: object
+    properties:
+      UserId:
+        type: string
+      PrimaryContact:
+        $ref: "#/definitions/B2BRESTAPI.Models.Contact"
+      TemplateId:
+        type: string
+      DateAgreed:
+        format: date-time
+        type: string
+      Type:
+        type: string
+      AgreementLink:
+        type: string
+  B2BRESTAPI.Models.Contact:
+    type: object
+    properties:
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Phone:
+        type: string
+      Fax:
+        type: string
+      Email:
+        type: string
+      Mobile:
+        type: string
+  DDResources.ServiceHub.DDUserDetailsInput:
+    type: object
+    properties:
+      UserName:
+        type: string
+      AccountCode:
+        type: string
+      Password:
+        type: string
+      Token:
+        type: string
+  B2BRESTAPI.Models.UserDetailsRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.UserDetalsIn"
+  B2BRESTAPI.Models.UserDetalsIn:
+    type: object
+    properties:
+      AccountId:
+        type: string
+      LoginId:
+        type: string
+      Password:
+        type: string
+      Program:
+        type: string
+  B2BRESTAPI.Models.OrderDetailsRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.OrderDetailsIn"
+  B2BRESTAPI.Models.OrderDetailsIn:
+    type: object
+    properties:
+      OrderNumber:
+        type: string
+      AccountCode:
+        type: string
+      CustomerPORef:
+        type: string
+  B2BRESTAPI.Models.OrderRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      OrderIn:
+        $ref: "#/definitions/B2BRESTAPI.Models.OrderIn"
+  B2BRESTAPI.Models.OrderIn:
+    type: object
+    properties:
+      Header:
+        $ref: "#/definitions/B2BRESTAPI.Models.POHeader"
+      Delivery:
+        $ref: "#/definitions/B2BRESTAPI.Models.PODelivery"
+      Items:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.OrderItem"
+  B2BRESTAPI.Models.POHeader:
+    type: object
+    properties:
+      OrderNumber:
+        type: string
+      Notes:
+        type: string
+      BranchAccountCode:
+        type: string
+      CurrencyCode:
+        type: string
+      QuoteNumber:
+        type: string
+  B2BRESTAPI.Models.PODelivery:
+    type: object
+    properties:
+      DeliveryContact:
+        $ref: "#/definitions/B2BRESTAPI.Models.Contact"
+      Attention:
+        type: string
+      DeliveryAddress:
+        $ref: "#/definitions/B2BRESTAPI.Models.Address"
+      RequestedShippingDate:
+        type: string
+      ShippingInstructions:
+        maxLength: 210
+        minLength: 0
+        type: string
+      PartShipped:
+        type: string
+      ShippingMethod:
+        type: string
+  B2BRESTAPI.Models.OrderItem:
+    type: object
+    properties:
+      Product:
+        $ref: "#/definitions/B2BRESTAPI.Models.Product"
+      EnduserFields:
+        $ref: "#/definitions/B2BRESTAPI.Models.EnduserFields"
+      Notes:
+        type: string
+  B2BRESTAPI.Models.Address:
+    type: object
+    properties:
+      CompanyName:
+        type: string
+      Address01:
+        type: string
+      Address02:
+        type: string
+      Address03:
+        type: string
+      Suburb:
+        type: string
+      State:
+        type: string
+      Postcode:
+        type: string
+      Country:
+        type: string
+  B2BRESTAPI.Models.Product:
+    type: object
+    properties:
+      Brand:
+        type: string
+      PartNumber:
+        type: string
+      Description:
+        type: string
+      UnitPrice:
+        type: string
+      SubscriptionType:
+        type: string
+      Quantity:
+        type: string
+      UseSystemPrice:
+        type: string
+      SerialNumbers:
+        type: array
+        items:
+          type: string
+      LineNumber:
+        type: string
+      UnitOfMeasure:
+        type: string
+  B2BRESTAPI.Models.EnduserFields:
+    type: object
+    properties:
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      ContactName:
+        type: string
+      CompanyName:
+        type: string
+      CompanyABN:
+        type: string
+      Address01:
+        type: string
+      Address02:
+        type: string
+      Address03:
+        type: string
+      Suburb:
+        type: string
+      Postcode:
+        type: string
+      State:
+        type: string
+      Country:
+        type: string
+      Phone:
+        type: string
+      Fax:
+        type: string
+      Email:
+        type: string
+      Mobile:
+        type: string
+      Agreement:
+        type: string
+      AgreementStart:
+        type: string
+      AgreementExpire:
+        type: string
+      AgreementReview:
+        type: string
+      AgreementVersion:
+        type: string
+      AgreementSupport:
+        type: string
+      AgreementType:
+        type: string
+      AgreementStatus:
+        type: string
+      AgreementStatusDescription:
+        type: string
+      AgreementLineReference:
+        type: string
+      EnduserField01:
+        type: string
+      EnduserField02:
+        type: string
+      EnduserField03:
+        type: string
+      EnduserField04:
+        type: string
+      EnduserField05:
+        type: string
+      EnduserField06:
+        type: string
+      EnduserField07:
+        type: string
+      EnduserField08:
+        type: string
+      EnduserField09:
+        type: string
+      EnduserField10:
+        type: string
+      EnduserField11:
+        type: string
+      EnduserField12:
+        type: string
+      EnduserField13:
+        type: string
+      EnduserField14:
+        type: string
+      EnduserField15:
+        type: string
+      EnduserField16:
+        type: string
+      EnduserField17:
+        type: string
+      EnduserField18:
+        type: string
+      EnduserField19:
+        type: string
+      EnduserField20:
+        type: string
+      EnduserFieldD1:
+        type: string
+      EnduserFieldD2:
+        type: string
+      EnduserFieldD3:
+        type: string
+      EnduserFieldD4:
+        type: string
+  B2BRESTAPI.Models.GetOrderTemplateRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      PartNumbers:
+        type: array
+        items:
+          type: string
+  B2BRESTAPI.Models.ConsignmentTrackingRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      ConsignmentNumber:
+        type: string
+  B2BRESTAPI.Models.TransactOpportunityRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.TransactOpportunity+In"
+  B2BRESTAPI.Models.TransactOpportunity+In:
+    required:
+      - PartnerPONumber
+      - ContractNumber
+      - OpportunityNumber
+    type: object
+    properties:
+      PartnerPONumber:
+        type: string
+      PartnerPODate:
+        type: string
+      ContractNumber:
+        type: string
+      OpportunityNumber:
+        type: string
+      EndCustomer:
+        $ref: "#/definitions/B2BRESTAPI.Models.TransactOpportunity+EndCustomer"
+      ShipTo:
+        $ref: "#/definitions/B2BRESTAPI.Models.TransactOpportunity+ShipTo"
+      Reseller:
+        $ref: "#/definitions/B2BRESTAPI.Models.TransactOpportunity+Reseller"
+      LineItems:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.TransactOpportunity+LineItem"
+  B2BRESTAPI.Models.TransactOpportunity+EndCustomer:
+    type: object
+    properties:
+      Account:
+        $ref: "#/definitions/B2BRESTAPI.Models.TransactOpportunity+Account"
+      ContractManager:
+        $ref: "#/definitions/B2BRESTAPI.Models.TransactOpportunity+Contact"
+  B2BRESTAPI.Models.TransactOpportunity+ShipTo:
+    required:
+      - CompanyName
+      - AddressLine1
+      - City
+      - State
+      - PostCode
+      - CountryCode
+    type: object
+    properties:
+      CompanyName:
+        type: string
+      AddressLine1:
+        type: string
+      AddressLine2:
+        type: string
+      City:
+        type: string
+      State:
+        type: string
+      PostCode:
+        type: string
+      CountryCode:
+        maxLength: 2
+        minLength: 0
+        type: string
+  B2BRESTAPI.Models.TransactOpportunity+Reseller:
+    required:
+      - CSN
+      - Email
+    type: object
+    properties:
+      CSN:
+        type: string
+      Email:
+        type: string
+  B2BRESTAPI.Models.TransactOpportunity+LineItem:
+    required:
+      - RenewalSKU
+      - SerialNumber
+      - Quantity
+      - UnitPrice
+    type: object
+    properties:
+      RenewalSKU:
+        type: string
+      SKUDescription:
+        type: string
+      SerialNumber:
+        type: string
+      Quantity:
+        type: string
+      UnitPrice:
+        type: string
+  B2BRESTAPI.Models.TransactOpportunity+Account:
+    type: object
+    properties:
+      CSN:
+        type: string
+      CompanyName:
+        type: string
+      AddressLine1:
+        type: string
+      AddressLine2:
+        type: string
+      City:
+        type: string
+      State:
+        type: string
+      PostCode:
+        type: string
+      CountryCode:
+        type: string
+  B2BRESTAPI.Models.TransactOpportunity+Contact:
+    type: object
+    properties:
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Email:
+        type: string
+      Phone:
+        type: string
+      CountryCode:
+        type: string
+  B2BRESTAPI.Models.B2BGetOrderDetailsList+In:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      AccountCode:
+        type: string
+      OrderNumber:
+        type: string
+      BackorderNumber:
+        type: string
+      CustomerPONumber:
+        type: string
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+In"
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+In:
+    type: object
+    properties:
+      SubscriptionType:
+        type: string
+      Action:
+        type: string
+      EndCustomer:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+EndCustomer"
+      ShipTo:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+ShipTo"
+      Reseller:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+Reseller"
+      ResellerPONumber:
+        type: string
+      OpportunityNumber:
+        type: string
+      ContractNumber:
+        type: string
+      ContractStartDate:
+        type: string
+      ContractEndDate:
+        type: string
+      ContractTerm:
+        type: string
+      SwitchFromContractNumber:
+        type: string
+      SwitchToContractNumber:
+        type: string
+      LineItems:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+LineItem"
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+EndCustomer:
+    type: object
+    properties:
+      Account:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+Account"
+      ContractManager:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+Contact"
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+ShipTo:
+    type: object
+    properties:
+      Account:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+Account"
+      Contact:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+Contact"
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+Reseller:
+    type: object
+    properties:
+      Account:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+Account"
+      Contact:
+        $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+Contact"
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+LineItem:
+    type: object
+    properties:
+      PartNumber:
+        type: string
+      PartDescription:
+        type: string
+      UnitPrice:
+        type: string
+      Quantity:
+        format: int32
+        type: integer
+      PartnerSubscriptionId:
+        type: string
+      SubscriptionReferenceNumber:
+        type: string
+      PreviousSubscriptions:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.PlaceSubscriptionOrder+PreviousSubscript\
+            ion"
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+Account:
+    type: object
+    properties:
+      CSN:
+        type: string
+      Name:
+        type: string
+      AltName:
+        type: string
+      AddressLine1:
+        type: string
+      AddressLine2:
+        type: string
+      AddressLine3:
+        type: string
+      City:
+        type: string
+      Postcode:
+        type: string
+      State:
+        type: string
+      CountryCode:
+        type: string
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+Contact:
+    type: object
+    properties:
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Email:
+        type: string
+      CountryCode:
+        type: string
+      Language:
+        type: string
+  B2BRESTAPI.Models.PlaceSubscriptionOrder+PreviousSubscription:
+    type: object
+    properties:
+      SubscriptionReferenceNumber:
+        type: string
+      Quantity:
+        type: string
+  B2BRESTAPI.Models.GetAnnuityListCons+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      AnnuityType:
+        type: string
+      StartBillingDate:
+        type: string
+      EndBillingDate:
+        type: string
+  B2BRESTAPI.Models.GetAnnuityOrderItems+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      SalesOrderNumber:
+        type: string
+      SalesOrderSuffix:
+        type: string
+      AnnuityID:
+        type: string
+  B2BRESTAPI.Models.ConfirmAnnuityOrder+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      ConfirmAnnuityList:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.ConfirmAnnuityOrder+In"
+  B2BRESTAPI.Models.ConfirmAnnuityOrder+In:
+    type: object
+    properties:
+      AnnuityID:
+        type: string
+      SalesOrderNumber:
+        type: string
+      SalesOrderSuffix:
+        type: string
+      SalesOrderLineSequence:
+        type: string
+      StockCode:
+        type: string
+      Quantity:
+        type: string
+      CustomerReference:
+        type: string
+      ConfirmFlag:
+        type: string
+  B2BRESTAPI.Models.GetADLicense+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      serialNumbers:
+        type: string
+      includeRelatedAssets:
+        type: string
+      plc:
+        type: string
+      release:
+        type: string
+  B2BRESTAPI.Models.B2BCreatePutAwayPO+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      Items:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.B2BCreatePutAwayPO+Item"
+  B2BRESTAPI.Models.B2BCreatePutAwayPO+Item:
+    type: object
+    properties:
+      WarehouseCode:
+        type: string
+      Vendor:
+        type: string
+      VendorReference:
+        type: string
+      StockCode:
+        type: string
+      StockDescription:
+        type: string
+      Quantity:
+        type: string
+      UnitPrice:
+        type: string
+      CurrencyCode:
+        type: string
+      HoldProcessingCode:
+        type: string
+      Location:
+        type: string
+  B2BRESTAPI.Models.B2BPartnerProgramDetails+Request:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      AccountCode:
+        type: string
+  B2BRESTAPI.Models.ESDToken+PrintTokenESDRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      Sku:
+        type: string
+      ClientPO:
+        type: string
+      StoreId:
+        type: string
+      ResellerId:
+        type: string
+  B2BRESTAPI.Models.ESDToken+CheckESDStatusRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      Token:
+        type: string
+  B2BRESTAPI.Models.ESDToken+ReturnESDTokenRequest:
+    type: object
+    properties:
+      RequestHeader:
+        $ref: "#/definitions/B2BRESTAPI.Models.APIRequestHeader"
+      Sku:
+        type: string
+      Token:
+        type: string
+      ClientPO:
+        type: string
+      StoreId:
+        type: string
+  B2BRESTAPI.Models.CreateSubscription+Request:
+    type: object
+    properties:
+      In:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.CreateSubscription+Request+Input"
+  B2BRESTAPI.Models.CreateSubscription+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      StockCode:
+        type: string
+      Quantity:
+        format: int32
+        type: integer
+      ParentSubscriptionId:
+        type: string
+      SubscriptionDescription:
+        type: string
+      MPNId:
+        type: string
+      ChargeType:
+        type: string
+      BillingFrequency:
+        type: string
+      Email:
+        type: string
+      UserName:
+        type: string
+  B2BRESTAPI.Models.SubscriptionRenewalDetail+Request:
+    type: object
+    properties:
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionRenewalDetail+Request+Input"
+  B2BRESTAPI.Models.SubscriptionRenewalDetail+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionId:
+        type: string
+      OrderId:
+        type: string
+  B2BRESTAPI.Models.CancelSubscription+Request:
+    type: object
+    properties:
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.CancelSubscription+Request+Input"
+  B2BRESTAPI.Models.CancelSubscription+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionId:
+        type: string
+      OrderId:
+        type: string
+  B2BRESTAPI.Models.ManageSubscriptionAutoRenew+Request:
+    type: object
+    properties:
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.ManageSubscriptionAutoRenew+Request+Inpu\
+          t"
+  B2BRESTAPI.Models.ManageSubscriptionAutoRenew+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionId:
+        type: string
+      AutoRenewEnabled:
+        type: boolean
+  B2BRESTAPI.Models.ScheduleSubscriptionRenewal+Request:
+    type: object
+    properties:
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.ScheduleSubscriptionRenewal+Request+Inpu\
+          t"
+  B2BRESTAPI.Models.ScheduleSubscriptionRenewal+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionId:
+        type: string
+      BillingCycleType:
+        type: string
+      TermDuration:
+        type: string
+      Quantity:
+        format: int32
+        type: integer
+  B2BRESTAPI.Models.GetSkuDetail+Request:
+    type: object
+    properties:
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.GetSkuDetail+Request+Input"
+  B2BRESTAPI.Models.GetSkuDetail+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      ProductId:
+        type: string
+      SkuId:
+        type: string
+  B2BRESTAPI.Models.GetTransitionEligibilities+Request:
+    type: object
+    properties:
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.GetTransitionEligibilities+Request+Input"
+  B2BRESTAPI.Models.GetTransitionEligibilities+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionId:
+        type: string
+  B2BRESTAPI.Models.SubscriptionTransition+Request:
+    type: object
+    properties:
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.SubscriptionTransition+Request+Input"
+  B2BRESTAPI.Models.SubscriptionTransition+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      SubscriptionId:
+        type: string
+      TargetSubscriptionId:
+        type: string
+      CatalogItemId:
+        type: string
+      TransitionType:
+        type: string
+      BillingCycleType:
+        type: string
+      TermDuration:
+        type: string
+      Quantity:
+        format: int32
+        type: integer
+  B2BRESTAPI.Models.EditTenantDetails+Request:
+    type: object
+    properties:
+      In:
+        $ref: "#/definitions/B2BRESTAPI.Models.EditTenantDetails+Request+Input"
+  B2BRESTAPI.Models.EditTenantDetails+Request+Input:
+    type: object
+    properties:
+      TenantId:
+        type: string
+      TenantName:
+        type: string
+      TenantDescription:
+        type: string
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Email:
+        type: string
+      Address1:
+        type: string
+      Address2:
+        type: string
+      Address3:
+        type: string
+      Suburb:
+        type: string
+      State:
+        type: string
+      Postcode:
+        type: string
+      Phone:
+        type: string
+  B2BRESTAPI.Models.PricingRequest:
+    type: object
+    properties:
+      MessageID:
+        type: string
+      Token:
+        type: string
+      AccessKey:
+        type: string
+      Products:
+        type: array
+        items:
+          type: string
+  B2BRESTAPI.Models.PricingResponse:
+    type: object
+    properties:
+      ResponseCreatedDateTime:
+        format: date-time
+        type: string
+      InstanceId:
+        type: string
+      Status:
+        type: string
+      ErrorDescription:
+        type: string
+      SearchResult:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.PriceSearchProduct"
+  B2BRESTAPI.Models.PriceSearchProduct:
+    type: object
+    properties:
+      Brand:
+        type: string
+      PartNumber:
+        type: string
+      AltPartNumber:
+        type: string
+      Description:
+        type: string
+      UnitPrice:
+        type: string
+      SOH:
+        type: string
+      RRPExTax:
+        type: string
+      BillingFreq:
+        type: string
+      Height:
+        type: string
+      Length:
+        type: string
+      Width:
+        type: string
+      Weight:
+        type: string
+  B2BRESTAPI.Models.PurchaseOrderRequestAutodesk:
+    type: object
+    properties:
+      MessageID:
+        type: string
+      Token:
+        type: string
+      AccessKey:
+        type: string
+      Header:
+        $ref: "#/definitions/B2BRESTAPI.Models.POHeader"
+      Delivery:
+        $ref: "#/definitions/B2BRESTAPI.Models.PODelivery"
+      LineItems:
+        type: array
+        items:
+          $ref: "#/definitions/B2BRESTAPI.Models.LineItem"
+  B2BRESTAPI.Models.LineItem:
+    type: object
+    properties:
+      Item:
+        $ref: "#/definitions/B2BRESTAPI.Models.Product"
+      Enduser:
+        $ref: "#/definitions/B2BRESTAPI.Models.POEnduser"
+      VendorInfoAutodesk:
+        $ref: "#/definitions/B2BRESTAPI.Models.VendorInfoAutodesk"
+  B2BRESTAPI.Models.POEnduser:
+    type: object
+    properties:
+      EnduserCSN:
+        type: string
+      EnduserContact:
+        $ref: "#/definitions/B2BRESTAPI.Models.Contact"
+      EnduserAddress:
+        $ref: "#/definitions/B2BRESTAPI.Models.Address"
+  B2BRESTAPI.Models.VendorInfoAutodesk:
+    type: object
+    properties:
+      EnduserContract:
+        type: string
+      ContractStartDate:
+        type: string
+      ContractEndDate:
+        type: string
+      ContractReview:
+        type: string
+      ContractReference:
+        type: string
+      AceRenewalId:
+        type: string
+      ResellerCSN:
+        type: string
+      ResellerEmail:
+        type: string
+      SerialNumber:
+        type: array
+        items:
+          type: string
+  B2BRESTAPI.Models.PurchaseOrderResponse:
+    type: object
+    properties:
+      InstanceId:
+        type: string
+      Status:
+        type: string
+      ErrorDescription:
+        type: string
+      SalesOrderNumber:
+        type: string
+      SubscriptionOrder:
+        type: string
