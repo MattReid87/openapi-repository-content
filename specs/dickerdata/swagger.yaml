@@ -2,7 +2,8 @@
 swagger: "2.0"
 info:
   version: v1
-  title: B2BRESTAPI
+  title: Dicker Data
+  description: Dicker Data B2B API
 host: b2b-api.dickerdata.com.au
 schemes:
   - https
@@ -1829,7 +1830,46 @@ paths:
           schema:
             $ref: "#/definitions/B2BRESTAPI.Models.PurchaseOrderResponse"
       deprecated: false
+parameters:
+  paginationLimit:
+    name: limit
+    in: query
+    description: Number of records to return per page
+    required: false
+    type: integer
+    default: 20
+    maximum: 100
+  paginationOffset:
+    name: offset
+    in: query
+    description: Number of records to skip
+    required: false
+    type: integer
+    default: 0
+
 definitions:
+  PaginationResponse:
+    type: object
+    properties:
+      total:
+        type: integer
+        description: Total number of records available
+      count:
+        type: integer
+        description: Number of records in the current response
+      limit:
+        type: integer
+        description: The limit used for the request
+      offset:
+        type: integer
+        description: The offset used for the request
+      next:
+        type: string
+        description: URL for the next page (null if no more pages)
+      previous:
+        type: string
+        description: URL for the previous page (null if first page)
+  
   B2BRESTAPI.Models.B2BRestAPIAccessKeyRequest:
     type: object
     properties:
