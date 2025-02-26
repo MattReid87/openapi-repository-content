@@ -1,6 +1,6 @@
 {
     "name": "SendGrid",
-    "description": "Comprehensive email delivery and management platform",
+    "description": "SendGrid API provides cloud-based email infrastructure for delivering transactional and marketing emails. This RESTful API enables developers to send emails, manage templates, track performance metrics, and handle contact lists. Features include comprehensive email analytics and management of suppressions.",
     "categories": ["Email", "Communication", "Marketing"],
     "version": "2024.01",
     "slug": "sendgrid",
