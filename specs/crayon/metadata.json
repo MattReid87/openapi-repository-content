@@ -2,7 +2,7 @@
     "name": "Crayon",
     "description": "Crayon Group API connects IT resellers and MSPs directly to this leading global IT services and innovation company's platform. The API provides real-time access to software licensing, cloud services, software asset management, and consulting services from 200+ vendors including Microsoft, AWS, and Adobe. Features include specialized cloud optimization, license management, and FinOps capabilities.",
     "categories": ["Distribution", "IT Services", "Technology"],
-    "version": "v1",
+    "version": "1",
     "slug": "crayon",
     "maintainers": ["MattReid87"],
     "icon": "https://raw.githubusercontent.com/MattReid87/openapi-repository-content/refs/heads/main/specs/crayon/crayon.svg"

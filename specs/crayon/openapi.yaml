@@ -8,6 +8,7 @@
   "paths": {
     "/api/v1/ActivityLogs": {
       "get": {
+        "operationId": "getActivityLogs",
         "tags": [
           "ActivityLogs"
         ],
@@ -119,6 +120,7 @@
     },
     "/api/v1/organizations/{organizationId}/Addresses": {
       "get": {
+        "operationId": "getOrganizationAddresses",
         "tags": [
           "Addresses"
         ],
@@ -175,6 +177,7 @@
     },
     "/api/v1/organizations/{organizationId}/Addresses/{id}": {
       "get": {
+        "operationId": "getOrganizationAddressById",
         "tags": [
           "Addresses"
         ],
@@ -224,6 +227,7 @@
     },
     "/api/v1/AgreementProducts": {
       "get": {
+        "operationId": "getAgreementProducts",
         "tags": [
           "AgreementProducts"
         ],
@@ -983,6 +987,7 @@
         }
       },
       "post": {
+        "operationId": "createAgreementProducts",
         "tags": [
           "AgreementProducts"
         ],
@@ -1045,6 +1050,7 @@
     },
     "/api/v1/AgreementProducts/file/xlsx": {
       "post": {
+        "operationId": "exportAgreementProductsToXlsx",
         "tags": [
           "AgreementProducts"
         ],
@@ -1081,6 +1087,7 @@
     },
     "/api/v1/AgreementProducts/{partNumber}/supportedbillingcycles": {
       "get": {
+        "operationId": "getAgreementProductSupportedBillingCycles",
         "tags": [
           "AgreementProducts"
         ],
@@ -1138,6 +1145,7 @@
     },
     "/api/v1/AgreementReports/{productContainerId}": {
       "get": {
+        "operationId": "getAgreementReportsByProductContainer",
         "tags": [
           "AgreementReports"
         ],
@@ -1187,6 +1195,7 @@
     },
     "/api/v1/AgreementReports/{agreementId}": {
       "put": {
+        "operationId": "updateAgreementReport",
         "tags": [
           "AgreementReports"
         ],
@@ -1251,6 +1260,7 @@
     },
     "/api/v1/Agreements": {
       "get": {
+        "operationId": "getAgreements",
         "tags": [
           "Agreements"
         ],
@@ -1451,6 +1461,7 @@
     },
     "/api/v1/Assets": {
       "get": {
+        "operationId": "getAssets",
         "tags": [
           "Assets"
         ],
@@ -1594,6 +1605,7 @@
     },
     "/api/v1/Assets/{id}": {
       "get": {
+        "operationId": "getAssetById",
         "tags": [
           "Assets"
         ],
@@ -1634,6 +1646,7 @@
     },
     "/api/v1/Assets/orders": {
       "get": {
+        "operationId": "getAssetOrders",
         "tags": [
           "Assets"
         ],
@@ -1777,6 +1790,7 @@
     },
     "/api/v1/Assets/{assetId}": {
       "put": {
+        "operationId": "updateAsset",
         "tags": [
           "Assets"
         ],
@@ -1824,6 +1838,7 @@
     },
     "/api/v1/Assets/{assetId}/tags": {
       "post": {
+        "operationId": "createAssetTags",
         "tags": [
           "Assets"
         ],
@@ -1869,6 +1884,7 @@
         }
       },
       "put": {
+        "operationId": "updateAssetTags",
         "tags": [
           "Assets"
         ],
@@ -1914,6 +1930,7 @@
         }
       },
       "delete": {
+        "operationId": "deleteAssetTags",
         "tags": [
           "Assets"
         ],
@@ -1937,6 +1954,7 @@
     },
     "/api/v1/AwsAccounts": {
       "get": {
+        "operationId": "getAwsAccounts",
         "tags": [
           "AwsAccounts"
         ],
@@ -2032,6 +2050,7 @@
     },
     "/api/v1/AwsAccounts/{id}": {
       "get": {
+        "operationId": "getAwsAccountById",
         "tags": [
           "AwsAccounts"
         ],
@@ -2070,6 +2089,7 @@
         }
       },
       "put": {
+        "operationId": "updateAwsAccount",
         "tags": [
           "AwsAccounts"
         ],
@@ -2134,6 +2154,7 @@
     },
     "/api/v1/AzurePlans/{azurePlanId}": {
       "get": {
+        "operationId": "getAzurePlanById",
         "tags": [
           "AzurePlans"
         ],
@@ -2174,6 +2195,7 @@
     },
     "/api/v1/AzurePlans/{azurePlanId}/azureSubscriptions": {
       "get": {
+        "operationId": "getAzurePlanSubscriptions",
         "tags": [
           "AzurePlans"
         ],
@@ -2245,6 +2267,7 @@
         }
       },
       "post": {
+        "operationId": "createAzurePlanSubscription",
         "tags": [
           "AzurePlans"
         ],
@@ -2292,6 +2315,7 @@
     },
     "/api/v1/AzurePlans/{azurePlanId}/azureSubscriptions/{id}": {
       "get": {
+        "operationId": "getAzurePlanSubscriptionById",
         "tags": [
           "AzurePlans"
         ],
@@ -2339,6 +2363,7 @@
         }
       },
       "put": {
+        "operationId": "updateAzurePlanSubscription",
         "tags": [
           "AzurePlans"
         ],
@@ -2412,6 +2437,7 @@
     },
     "/api/v1/AzurePlans/{azurePlanId}/azureSubscriptions/{id}/assign-unique-admin": {
       "put": {
+        "operationId": "assignUniqueAdminToAzureSubscription",
         "tags": [
           "AzurePlans"
         ],
@@ -2485,6 +2511,7 @@
     },
     "/api/v1/AzurePlans/{azurePlanId}/azureSubscriptions/{id}/cancel": {
       "post": {
+        "operationId": "cancelAzureSubscription",
         "tags": [
           "AzurePlans"
         ],
@@ -2534,6 +2561,7 @@
     },
     "/api/v1/AzurePlans/{azurePlanId}/azureSubscriptions/{id}/enable": {
       "post": {
+        "operationId": "enableAzureSubscription",
         "tags": [
           "AzurePlans"
         ],
@@ -2583,6 +2611,7 @@
     },
     "/api/v1/AzurePlans/{azurePlanId}/azureSubscriptions/{id}/rename": {
       "patch": {
+        "operationId": "renameAzureSubscription",
         "tags": [
           "AzurePlans"
         ],
@@ -2656,6 +2685,7 @@
     },
     "/api/v1/AzureUsage/{azurePlanId}/azureSubscriptions/{id}/monthlyUsage": {
       "get": {
+        "operationId": "getAzureSubscriptionMonthlyUsage",
         "tags": [
           "AzureUsage"
         ],
@@ -2732,6 +2762,7 @@
     },
     "/api/v1/BillingCycles": {
       "get": {
+        "operationId": "getBillingCycles",
         "tags": [
           "BillingCycles"
         ],
@@ -2780,6 +2811,7 @@
     },
     "/api/v1/BillingCycles/productVariant/{productVariantId}": {
       "get": {
+        "operationId": "getBillingCyclesByProductVariant",
         "tags": [
           "BillingCycles"
         ],
@@ -2829,6 +2861,7 @@
     },
     "/api/v1/BillingCycles/cspNameDictionary": {
       "get": {
+        "operationId": "getCspNameDictionary",
         "tags": [
           "BillingCycles"
         ],
@@ -2867,6 +2900,7 @@
     },
     "/api/v2/BillingStatements/{id}/reconciliationfile": {
       "get": {
+        "operationId": "getBillingStatementReconciliationFileV2",
         "tags": [
           "BillingStatements"
         ],
@@ -2890,6 +2924,7 @@
     },
     "/api/v1/BillingStatements": {
       "get": {
+        "operationId": "getBillingStatements",
         "tags": [
           "BillingStatements"
         ],
@@ -2987,6 +3022,7 @@
     },
     "/api/v1/BillingStatements/grouped": {
       "get": {
+        "operationId": "getGroupedBillingStatements",
         "tags": [
           "BillingStatements"
         ],
@@ -3084,6 +3120,7 @@
     },
     "/api/v1/BillingStatements/file/{id}": {
       "get": {
+        "operationId": "getBillingStatementFile",
         "tags": [
           "BillingStatements"
         ],
@@ -3107,6 +3144,7 @@
     },
     "/api/v1/BillingStatements/{id}/reconciliationfile": {
       "get": {
+        "operationId": "getBillingStatementReconciliationFile",
         "tags": [
           "BillingStatements"
         ],
@@ -3130,6 +3168,7 @@
     },
     "/api/v1/BillingStatements/{id}/billingrecordsfile": {
       "get": {
+        "operationId": "getBillingStatementRecordsFile",
         "tags": [
           "BillingStatements"
         ],
@@ -3153,6 +3192,7 @@
     },
     "/api/v1/BlogItems": {
       "get": {
+        "operationId": "getBlogItems",
         "tags": [
           "BlogItems"
         ],
@@ -3211,6 +3251,7 @@
     },
     "/api/v1/Clients": {
       "get": {
+        "operationId": "getClients",
         "tags": [
           "Clients"
         ],
@@ -3273,6 +3314,7 @@
         }
       },
       "post": {
+        "operationId": "createClient",
         "tags": [
           "Clients"
         ],
@@ -3326,6 +3368,7 @@
     },
     "/api/v1/Clients/{clientId}": {
       "get": {
+        "operationId": "getClientById",
         "tags": [
           "Clients"
         ],
@@ -3364,6 +3407,7 @@
         }
       },
       "put": {
+        "operationId": "updateClient",
         "tags": [
           "Clients"
         ],
@@ -3426,6 +3470,7 @@
         }
       },
       "delete": {
+        "operationId": "deleteClient",
         "tags": [
           "Clients"
         ],
@@ -3466,6 +3511,7 @@
     },
     "/api/v1/Clients/no-secret": {
       "post": {
+        "operationId": "createClientWithoutSecret",
         "tags": [
           "Clients"
         ],
@@ -3519,6 +3565,7 @@
     },
     "/api/v1/Consumers": {
       "get": {
+        "operationId": "getConsumers",
         "tags": [
           "Consumers"
         ],
@@ -3589,6 +3636,7 @@
         }
       },
       "post": {
+        "operationId": "createConsumer",
         "tags": [
           "Consumers"
         ],
@@ -3642,6 +3690,7 @@
     },
     "/api/v1/Consumers/{id}": {
       "get": {
+        "operationId": "getConsumerById",
         "tags": [
           "Consumers"
         ],
@@ -3680,6 +3729,7 @@
         }
       },
       "put": {
+        "operationId": "updateConsumer",
         "tags": [
           "Consumers"
         ],
@@ -3742,6 +3792,7 @@
         }
       },
       "delete": {
+        "operationId": "deleteConsumer",
         "tags": [
           "Consumers"
         ],
@@ -3782,6 +3833,7 @@
     },
     "/api/v1/CrayonAccounts": {
       "get": {
+        "operationId": "getCrayonAccounts",
         "tags": [
           "CrayonAccounts"
         ],
@@ -3875,6 +3927,7 @@
         }
       },
       "post": {
+        "operationId": "createCrayonAccount",
         "tags": [
           "CrayonAccounts"
         ],
@@ -3928,6 +3981,7 @@
     },
     "/api/v1/CrayonAccounts/{id}": {
       "get": {
+        "operationId": "getCrayonAccountById",
         "tags": [
           "CrayonAccounts"
         ],
@@ -3966,6 +4020,7 @@
         }
       },
       "put": {
+        "operationId": "updateCrayonAccount",
         "tags": [
           "CrayonAccounts"
         ],
@@ -4030,6 +4085,7 @@
     },
     "/api/v1/customertenants/{customerTenantId}/agreements": {
       "get": {
+        "operationId": "getCustomerTenantAgreements",
         "tags": [
           "CustomerTenantAgreements"
         ],
@@ -4084,6 +4140,7 @@
         }
       },
       "post": {
+        "operationId": "createCustomerTenantAgreement",
         "tags": [
           "CustomerTenantAgreements"
         ],
@@ -4148,6 +4205,7 @@
     },
     "/api/v1/CustomerTenants": {
       "get": {
+        "operationId": "getCustomerTenants",
         "tags": [
           "CustomerTenants"
         ],
@@ -4273,6 +4331,7 @@
         }
       },
       "post": {
+        "operationId": "createCustomerTenant",
         "tags": [
           "CustomerTenants"
         ],
@@ -4326,6 +4385,7 @@
     },
     "/api/v1/CustomerTenants/{id}": {
       "get": {
+        "operationId": "getCustomerTenantById",
         "tags": [
           "CustomerTenants"
         ],
@@ -4364,6 +4424,7 @@
         }
       },
       "put": {
+        "operationId": "updateCustomerTenant",
         "tags": [
           "CustomerTenants"
         ],
@@ -4426,6 +4487,7 @@
         }
       },
       "delete": {
+        "operationId": "deleteCustomerTenant",
         "tags": [
           "CustomerTenants"
         ],
@@ -4449,6 +4511,7 @@
     },
     "/api/v1/CustomerTenants/{id}/detailed": {
       "get": {
+        "operationId": "getCustomerTenantDetailedById",
         "tags": [
           "CustomerTenants"
         ],
@@ -4489,6 +4552,7 @@
     },
     "/api/v1/CustomerTenants/existing": {
       "post": {
+        "operationId": "createExistingCustomerTenant",
         "tags": [
           "CustomerTenants"
         ],
@@ -4552,6 +4616,7 @@
     },
     "/api/v1/CustomerTenants/{customerTenantId}/azurePlan": {
       "get": {
+        "operationId": "getCustomerTenantAzurePlan",
         "tags": [
           "CustomerTenants"
         ],
@@ -4592,6 +4657,7 @@
     },
     "/api/v1/connect/token": {
       "post": {
+        "operationId": "getCustomerToken",
         "tags": [
           "CustomerToken"
         ],
@@ -4621,6 +4687,7 @@
     },
     "/api/v1/Exports/generate-license-report": {
       "post": {
+        "operationId": "generateLicenseReport",
         "tags": [
           "Exports"
         ],
@@ -4657,6 +4724,7 @@
     },
     "/api/v1/Exports": {
       "get": {
+        "operationId": "getExports",
         "tags": [
           "Exports"
         ],
@@ -4686,6 +4754,7 @@
     },
     "/api/v1/Exports/{id}/download": {
       "get": {
+        "operationId": "downloadExport",
         "tags": [
           "Exports"
         ],
@@ -4709,6 +4778,7 @@
     },
     "/api/v1/Exports/{id}": {
       "delete": {
+        "operationId": "deleteExport",
         "tags": [
           "Exports"
         ],
@@ -4732,6 +4802,7 @@
     },
     "/api/v1/FacebookOrders/checkout": {
       "post": {
+        "operationId": "checkoutFacebookOrder",
         "tags": [
           "FacebookOrders"
         ],
@@ -4768,6 +4839,7 @@
     },
     "/api/v1/GoogleOrders/checkout": {
       "post": {
+        "operationId": "checkoutGoogleOrder",
         "tags": [
           "GoogleOrders"
         ],
@@ -4804,6 +4876,7 @@
     },
     "/api/v1/Groupings": {
       "get": {
+        "operationId": "getGroupings",
         "tags": [
           "Groupings"
         ],
@@ -4881,6 +4954,7 @@
         }
       },
       "post": {
+        "operationId": "createGrouping",
         "tags": [
           "Groupings"
         ],
@@ -4934,6 +5008,7 @@
     },
     "/api/v1/Groupings/{id}": {
       "get": {
+        "operationId": "getGroupingById",
         "tags": [
           "Groupings"
         ],
@@ -4972,6 +5047,7 @@
         }
       },
       "put": {
+        "operationId": "updateGrouping",
         "tags": [
           "Groupings"
         ],
@@ -5034,8 +5110,33 @@
         }
       },
       "delete": {
+        "operationId": "deleteGrouping",
         "tags": [
           "Groupings"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/InvoiceProfiles": {
+      "get": {
+        "operationId": "getInvoiceProfiles",
+        "tags": [
+          "InvoiceProfiles"
         ],
         "parameters": [
           {
@@ -14936,7 +15037,7 @@
   },
   "security": [
     {
-      "Bearer": [ ]
+      "Bearer": []
     }
   ]
 }
