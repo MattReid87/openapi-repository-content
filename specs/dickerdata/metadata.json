@@ -2,7 +2,7 @@
     "name": "Dicker Data",
     "description": "Dicker Data API connects IT resellers and MSPs directly to this leading ANZ technology distributor's platform. The API provides real-time access to product catalogs, inventory levels, ordering systems, and account management for products from 80+ vendors including Microsoft, Cisco, and HP. Features include specialized MSP functionality like license management and service provisioning.",
     "categories": ["Distribution", "IT Services", "Technology"],
-    "version": "2024.01",
+    "version": "v1",
     "slug": "dickerdata",
     "maintainers": ["MattReid87"],
     "icon": "https://raw.githubusercontent.com/MattReid87/openapi-repository-content/refs/heads/main/specs/dickerdata/dickerdata.svg"

@@ -2,7 +2,7 @@
     "name": "Stripe",
     "description": "Stripe API delivers comprehensive payment processing capabilities for online and in-person transactions. This RESTful API enables businesses to accept payments, manage customers, handle subscriptions, and generate invoices across 135+ currencies. Features include customizable checkout flows, fraud prevention tools, and marketplace payment splitting.",
     "categories": ["Payment", "Finance"],
-    "version": "2024.01",
+    "version": "v3",
     "slug": "stripe",
     "maintainers": ["MattReid87"],
     "icon": "https://raw.githubusercontent.com/MattReid87/openapi-repository-content/refs/heads/main/specs/stripe/stripe.svg"
